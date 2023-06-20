@@ -1,0 +1,69 @@
+﻿<UserControl
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AALUND13_Plugin"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" d:DataContext="{d:DesignInstance Type=local:AALUND13_PluginControl}" x:Class="AALUND13_Plugin.AALUND13_PluginControl"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47.924"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="107.809"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="29"/>
+            <RowDefinition Height="66.91"/>
+            <RowDefinition Height="63.797"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="AALUND13 Plugin" VerticalAlignment="Center" Height="39" FontSize="24" FontWeight="Bold" Grid.Column="1" Margin="88,0,88,0" TextAlignment="Center"/>
+        <TextBlock TextWrapping="Wrap" Text="Vote Restart Percentage" TextAlignment="Center" Margin="0,1,0,4" FontSize="14" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+        <TextBlock TextWrapping="Wrap" Text="Vote Mod Percentage" TextAlignment="Center" Margin="0,0,0,2" Grid.Row="2" FontSize="16" UseLayoutRounding="False" Grid.IsSharedSizeScope="True" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+        <TextBlock TextWrapping="Wrap" Text="Vote Mod Min Player" TextAlignment="Center" FontSize="16" Margin="0,1,0,2" Grid.Row="3" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+        <TextBox x:Name="Vote_Mod_Min_Player_Needed" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="{Binding VoteModMinPlayer}" Margin="10,3,10,3"/>
+        <Slider x:Name="Vote_Restart_Percentage" Grid.Column="1" Grid.Row="1" Maximum="100" LargeChange="5" Value="{Binding VoteModYesPercentageNeeded}" Margin="10,4,10,4"/>
+        <Slider x:Name="Vote_Mod_Percentage" Grid.Column="1" Grid.Row="2" Maximum="100" LargeChange="5" Value="{Binding VoteModYesPercentageNeeded}" Margin="10,3,10,2"/>
+        <CheckBox x:Name="Vote_Restart" Content="Vote Restart" Grid.Row="4" IsChecked="{Binding VoteRestart}" VerticalAlignment="Center" Margin="10,0,10,0" Height="16" HorizontalAlignment="Center"/>
+        <CheckBox x:Name="Vote_Mod" Content="Vote Mod" Grid.Row="5" VerticalAlignment="Center" IsChecked="{Binding VoteMod}" Margin="10,0,10,0" Height="16" HorizontalAlignment="Center"/>
+        <Button x:Name="Save_Config_Button" Content="Save Config" Margin="0,5,0,4" Grid.Row="9" Click="SaveButton_OnClick" Grid.Column="1" FontWeight="Bold" FontSize="24"/>
+        <ListBox x:Name="Tag_Listbox" Grid.Column="1" Grid.Row="5" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding observableBlacklistTags}" Margin="0,16,0,0" Grid.RowSpan="2" BorderBrush="#FF707070" Background="#FFDDDDDD"/>
+        <Button x:Name="Add_Button" Grid.Column="1" Content="Add" HorizontalAlignment="Right" Grid.Row="7" VerticalAlignment="Center" Width="144" Height="29" FontSize="18" FontWeight="Bold" Click="Add_Button_Click" HorizontalContentAlignment="Center"/>
+        <Button x:Name="Remove_Button" Grid.Column="1" Content="Remove" HorizontalAlignment="Right" Grid.Row="7" VerticalAlignment="Center" Width="144" Height="29" FontSize="18" FontWeight="Bold" Click="Remove_Button_Click" HorizontalContentAlignment="Center" Margin="0,0,148,0"/>
+        <ComboBox x:Name="Tags_Dropbox" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Height="29" Margin="0,0,296,0">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="block"/>
+            <ComboBoxItem Content="skybox"/>
+            <ComboBoxItem Content="character"/>
+            <ComboBoxItem Content="animation"/>
+            <ComboBoxItem Content="respawn Ship"/>
+            <ComboBoxItem Content="production"/>
+            <ComboBoxItem Content="script"/>
+            <ComboBoxItem Content="modpack"/>
+            <ComboBoxItem Content="asteroid"/>
+            <ComboBoxItem Content="planet"/>
+            <ComboBoxItem Content="hud"/>
+            <ComboBoxItem Content="other"/>
+            <ComboBoxItem Content="npc"/>
+            <ComboBoxItem Content="serverscripts"/>
+            <ComboBoxItem Content="font"/>
+        </ComboBox>
+        <TextBlock TextWrapping="Wrap" Text="Blacklisted Mod Tags" TextAlignment="Center" Grid.Row="6" FontSize="16" UseLayoutRounding="False" Grid.IsSharedSizeScope="True" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center" Height="21"/>
+        <TextBlock TextWrapping="Wrap" Text="Vote Mod Min Subscribers" TextAlignment="Center" Margin="0,4,0,4" Grid.Row="8" UseLayoutRounding="False" Grid.IsSharedSizeScope="True" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="13"/>
+        <TextBox x:Name="Vote_Mod_Min_Subscribers_Needed" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="{Binding VoteModMinSubscribersNeeded}" Margin="10,6,10,4"/>
+    </Grid>
+
+</UserControl>
