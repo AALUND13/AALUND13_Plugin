@@ -28,7 +28,8 @@ using VRage.Input;
 
 namespace AALUND13_Plugin
 {
-    [Category("AALUND13_Plugin")]
+
+    [Category("aalund13_plugin")]
     public class AALUND13_PluginCommands : CommandModule
     {
         //TODO: Make rename the project
@@ -505,7 +506,7 @@ namespace AALUND13_Plugin
         }
     }
 
-    [Category("AALUND13_Plugin_config")]
+    [Category("aalund13_plugin_config")]
     public class AALUND13_PluginConfigCommands : CommandModule
     {
         public AALUND13_Plugin Plugin => (AALUND13_Plugin)Context.Plugin;
