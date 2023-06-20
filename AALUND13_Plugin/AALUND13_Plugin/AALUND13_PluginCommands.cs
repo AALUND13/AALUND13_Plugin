@@ -337,7 +337,7 @@ namespace AALUND13_Plugin
 
         //-----------------------------------------------------------//
 
-        [Command("removemod name", "This command will get all the mods in the world")]
+        [Command("removemod name", "This command will remove a mod by name in the world")]
         [Permission(MyPromoteLevel.Admin)]
         public void RemoveModsByName(string modName)
         {
@@ -357,7 +357,7 @@ namespace AALUND13_Plugin
         }
         //-----------------------------------------------------------//
 
-        [Command("removemod id", "This command will get all the mods in the world")]
+        [Command("removemod id", "This command will remove a mod by id in the world")]
         [Permission(MyPromoteLevel.Admin)]
         public void RemoveModsByIds(ulong ModID)
         {
@@ -378,7 +378,7 @@ namespace AALUND13_Plugin
 
         //-----------------------------------------------------------//
 
-        [Command("addmod", "This command adds mods to the world.")]
+        [Command("addmod", "This command add a mod to the world.")]
         [Permission(MyPromoteLevel.Admin)]
         public void AddMod(ulong modID)
         {
@@ -532,8 +532,8 @@ namespace AALUND13_Plugin
 
         //-----------------------------------------------------------//
 
-        [Command("vote_mod_min_player", "This command will set needed player percentage of vote restart command")]
-        [Permission(MyPromoteLevel.Moderator)]
+        [Command("vote_mod_min_player", "This command will set needed player percentage of vote mod command")]
+        [Permission(MyPromoteLevel.SpaceMaster)]
         public void voteModMinPlayer(int voteModMinPlayer)
         {
             Plugin.Config.VoteModMinPlayer = Math.Abs(voteModMinPlayer);
@@ -544,7 +544,7 @@ namespace AALUND13_Plugin
         //-----------------------------------------------------------//
 
         [Command("vote_mod_min_subscribers_needed", "This command will set needed player percentage of vote restart command")]
-        [Permission(MyPromoteLevel.Moderator)]
+        [Permission(MyPromoteLevel.SpaceMaster)]
         public void VoteModMinSubscribersNeeded(int voteModMinSubscribersNeeded)
         {
             Plugin.Config.VoteModMinSubscribersNeeded = Math.Abs(voteModMinSubscribersNeeded);
@@ -566,7 +566,7 @@ namespace AALUND13_Plugin
         //-----------------------------------------------------------//
 
         [Command("vote_mod_player_percent_needed", "This command will set needed player percentage of vote mod command")]
-        [Permission(MyPromoteLevel.Moderator)]
+        [Permission(MyPromoteLevel.SpaceMaster)]
         public void VoteModPlayerPercentNeeded(int voteModPlayerPercentNeeded)
         {
             Plugin.Config.VoteModYesPercentageNeeded = (int)Math.Round((double)MathHelper.Clamp(voteModPlayerPercentNeeded, 0, 100));
@@ -595,7 +595,7 @@ namespace AALUND13_Plugin
         //-----------------------------------------------------------//
 
         [Command("vote_mod", "This command will enable or disable vote mod")]
-        [Permission(MyPromoteLevel.Moderator)]
+        [Permission(MyPromoteLevel.SpaceMaster)]
         public void ConfigVoteMod(bool enable)
         {
             if (!enable)
@@ -612,7 +612,7 @@ namespace AALUND13_Plugin
         //-----------------------------------------------------------//
 
         [Command("blacklist_tag", "This command will add or remove blacklist tags")]
-        [Permission(MyPromoteLevel.Moderator)]
+        [Permission(MyPromoteLevel.SpaceMaster)]
         public void ConfigBlacklistTag(string tag = "none", bool add = true)
         {
             if (tag == "none")
