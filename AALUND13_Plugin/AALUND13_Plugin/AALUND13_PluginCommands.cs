@@ -639,7 +639,6 @@ namespace AALUND13_Plugin
                     {
                         Context.Respond($"'{tag.ToLower()}' has be added to the blacklisted tag");
                         Plugin.Config.blacklistedTags.Add(tag.ToLower());
-                        Plugin.updateList = true;
                         Plugin.Save();
                     }
                     else
@@ -653,7 +652,6 @@ namespace AALUND13_Plugin
                     {
                         Context.Respond($"'{tag.ToLower()}' has be remove to the blacklisted tag");
                         Plugin.Config.blacklistedTags.Remove(tag.ToLower());
-                        Plugin.updateList = true;
                         Plugin.Save();
                     }
                     else
