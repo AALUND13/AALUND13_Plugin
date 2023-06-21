@@ -92,6 +92,7 @@ namespace AALUND13_Plugin
                 Torch.Restart();
             }
             Torch.CurrentSession?.Managers?.GetManager<IChatManagerServer>()?.SendMessageAsSelf($"Restarting in {timeToRestart} minutes");
+            Log.Info($"Restarting in {timeToRestart} minutes");
         }
 
         private void StartTimer()
@@ -146,6 +147,8 @@ namespace AALUND13_Plugin
                         Torch.CurrentSession?.Managers?.GetManager<IChatManagerServer>()?.SendMessageAsSelf("'AALUND13 Plugin' Is Out Of Date! Updating plugin...");
                         if (downloadLatestVersionPlugin(path, "AALUND13_Plugin.zip"))
                         {
+                            Log.Info("Successfully downloaded latest version of 'AALUND13 Plugin'");
+                            Log.Info("Restarting in 5 minutes");
                             Torch.CurrentSession?.Managers?.GetManager<IChatManagerServer>()?.SendMessageAsSelf("Successfully downloaded latest version of 'AALUND13 Plugin'");
                             Torch.CurrentSession?.Managers?.GetManager<IChatManagerServer>()?.SendMessageAsSelf("Restarting in 5 minutes");
                             StartRestartTimer();
