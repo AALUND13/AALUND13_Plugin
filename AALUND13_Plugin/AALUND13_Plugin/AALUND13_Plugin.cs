@@ -79,9 +79,9 @@ namespace AALUND13_Plugin
 
         private void StartRestartTimer()
         {
-            timer = new Timer(60000); // 60 second interval
-            timer.Elapsed += RestartTimerElapsed;
-            timer.Start();
+            restartTimer = new Timer(60000); // 60 second interval
+            restartTimer.Elapsed += RestartTimerElapsed;
+            restartTimer.Start();
         }
 
         private void RestartTimerElapsed(object sender, ElapsedEventArgs e)
@@ -97,7 +97,7 @@ namespace AALUND13_Plugin
 
         private void StartTimer()
         {
-            timer = new Timer(10000); // 10 second interval
+            timer = new Timer(60000); // 10 second interval
             timer.Elapsed += TimerElapsed;
             timer.Start();
         }
