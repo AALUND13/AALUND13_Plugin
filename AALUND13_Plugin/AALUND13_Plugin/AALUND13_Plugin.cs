@@ -156,6 +156,7 @@ namespace AALUND13_Plugin
                         }
                         else
                         {
+                            Log.Info("Falled to download latest version of 'AALUND13 Plugin'");
                             Torch.CurrentSession?.Managers?.GetManager<IChatManagerServer>()?.SendMessageAsSelf("Falled to download latest version of 'AALUND13 Plugin'");
                         }
                     }
